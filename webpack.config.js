@@ -1,14 +1,12 @@
-// webpack.config.js
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: {
-    main: './src/index.js'
-  },
+  entry: './src/index.js',
   output: {
+    filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    publicPath: '/dist/'
   },
   module: {
     rules: [
@@ -26,7 +24,7 @@ module.exports = {
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, './'),
     },
     compress: true,
     port: 9000
