@@ -8,4 +8,4 @@ const weatherForm = document.getElementById('weather-search-form');
 const weatherSearchBar = document.getElementById('weather-search-bar');
 
 form.addEventListener('submit', getGif);
-weatherForm.addEventListener('submit', displayData());
+weatherForm.addEventListener('submit', getWeather);
