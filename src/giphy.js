@@ -1,4 +1,3 @@
-const searchBar = document.getElementById('searchBar');
 const giphyKey = process.env.GIPHY_API_KEY;
 
 export async function getGif(e, value) {
