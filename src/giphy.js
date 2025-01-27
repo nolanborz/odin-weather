@@ -1,11 +1,12 @@
 const giphyKey = process.env.GIPHY_API_KEY;
 
-export async function getGif(e, value) {
-  e.preventDefault();
+export async function getGif(value) {
   const img = document.querySelector('img');
+  try {
   const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyKey}&s=${value}`, {mode: 'cors'})
-  .then(response => response.json()) 
-  .then(response => {
-    img.src = response.data.images.original.url;
-  });
+  const data = await response.json();
+  img.src = data.data.images.original.url;
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
